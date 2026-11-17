@@ -11,7 +11,7 @@
     body{font-family:"Avenir Next","Hiragino Sans","Yu Gothic",Arial,sans-serif;-webkit-font-smoothing:antialiased}
     button{font:inherit}.deck{position:relative;width:100vw;height:100vh;isolation:isolate;background:var(--paper)}
     .slide{position:absolute;inset:0;display:grid;align-content:center;padding:7.5vh 7vw 10vh;background:var(--paper);overflow:hidden;visibility:hidden;opacity:0;pointer-events:none;transform:translateX(4%);clip-path:inset(0 0 0 12%);transition:opacity .5s var(--ease),transform .72s var(--ease),clip-path .72s var(--ease)}
-    .slide.active{visibility:visible;opacity:1;pointer-events:auto;transform:none;clip-path:inset(0);z-index:2;animation:slideEnter .82s var(--ease) both}.slide.leaving{visibility:visible;opacity:0;transform:translateX(-3%);clip-path:inset(0 12% 0 0);z-index:1}
+    .slide.active{visibility:visible;opacity:1;pointer-events:auto;transform:none;clip-path:inset(0);z-index:2;animation:slideEnter .82s var(--ease) both}.slide.exiting{visibility:visible;pointer-events:none;z-index:3;animation:slideExit .42s var(--ease) both}.slide.zoom-source .copy{animation:textSweep .42s var(--ease) both}.slide.zoom-source .globe{animation:globeLift .5s var(--ease) both}
     .slide.dark{background:var(--ink);color:var(--white)}.slide.red-slide{background:var(--red);color:var(--white)}
     .slide::before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.19;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.15'/%3E%3C/svg%3E");mix-blend-mode:multiply}
     .slide.dark::before,.slide.red-slide::before{mix-blend-mode:screen;opacity:.07}
@@ -22,8 +22,11 @@
     [data-reveal]{opacity:0;transform:translateY(34px)}.active [data-reveal]{animation:revealUp .78s var(--ease) both;animation-delay:calc(var(--i,0)*110ms + 240ms)}
     .sun{position:absolute;border-radius:50%;background:var(--red);transform:scale(.3);opacity:0}.active .sun{animation:sunBloom 1.2s var(--ease) .12s both}
     @keyframes slideEnter{0%{opacity:0;transform:translateX(7%);clip-path:inset(0 0 0 22%)}100%{opacity:1;transform:none;clip-path:inset(0)}}
+    @keyframes slideExit{0%{opacity:1;transform:none;clip-path:inset(0)}100%{opacity:0;transform:translateX(-6%);clip-path:inset(0 18% 0 0)}}
     @keyframes revealUp{0%{opacity:0;transform:translateY(38px);filter:blur(5px)}100%{opacity:1;transform:none;filter:blur(0)}}
     @keyframes sunBloom{0%{opacity:0;transform:scale(.28)}100%{opacity:1;transform:scale(1)}}
+    @keyframes textSweep{to{opacity:0;transform:translateX(-70px);filter:blur(10px)}}
+    @keyframes globeLift{to{opacity:0;transform:scale(1.08)}}
     .stroke{height:3px;background:var(--red);width:0;transition:width .9s var(--ease) .35s}.active .stroke{width:100%}
     .slide-label{position:absolute;z-index:5;right:2.5vw;top:7vh;font:700 12px/1 "Avenir Next",sans-serif;letter-spacing:.18em;color:var(--ash)}.dark .slide-label,.red-slide .slide-label{color:#aaa49a}
 
@@ -58,6 +61,14 @@
     .chrome{position:fixed;z-index:20;left:0;right:0;bottom:0;height:6.5vh;min-height:48px;padding:0 2.5vw;display:grid;grid-template-columns:140px 1fr 105px;align-items:center;gap:2vw;color:var(--ink);mix-blend-mode:difference}.section-name,.count{color:white;font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase}.count{text-align:right}.progress{display:grid;grid-template-columns:repeat(13,1fr);gap:7px;align-items:center}.dot{height:2px;border:0;padding:0;background:#777;cursor:pointer;transition:height .25s,background .25s}.dot.on{height:5px;background:white}.dot:hover{height:5px}
     .help{position:fixed;z-index:25;right:2.2vw;top:2.4vh;border:1px solid rgba(128,128,128,.45);background:rgba(240,235,225,.7);backdrop-filter:blur(8px);color:#222;width:34px;height:34px;border-radius:50%;cursor:pointer;font-weight:700}.dark~.help{color:white}.help-panel{position:fixed;z-index:30;right:2.2vw;top:7vh;width:260px;padding:18px;background:#111;color:#eee;box-shadow:0 18px 50px #0007;opacity:0;transform:translateY(-10px);pointer-events:none;transition:.25s}.help-panel.open{opacity:1;transform:none;pointer-events:auto}.help-panel b{font-size:12px;letter-spacing:.15em;text-transform:uppercase}.help-panel p{font-size:13px;line-height:1.7;margin:12px 0 0;color:#bbb}
     .overview{position:fixed;inset:0;z-index:50;background:#111;color:white;padding:5vh 5vw;overflow:auto;opacity:0;pointer-events:none;transition:opacity .3s}.overview.open{opacity:1;pointer-events:auto}.overview-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:4vh}.overview-head h2{font:700 42px/1 "Bodoni 72",Didot,serif;margin:0}.overview-head button{border:1px solid #777;background:none;color:white;padding:9px 14px;cursor:pointer}.thumbs{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}.thumb{aspect-ratio:16/9;border:1px solid #454545;background:#1b1b1b;color:white;padding:18px;text-align:left;cursor:pointer;position:relative;overflow:hidden;transition:transform .25s,border-color .25s}.thumb:hover,.thumb.current{transform:translateY(-3px);border-color:var(--red)}.thumb b{display:block;color:#f29aa1;font-size:10px;letter-spacing:.16em;margin-bottom:12px}.thumb span{font:700 clamp(17px,1.6vw,25px)/1.05 "Bodoni 72",Didot,serif}
+    .cinematic{position:fixed;inset:0;z-index:60;background:var(--paper);overflow:hidden;visibility:hidden;pointer-events:none}.cinematic.run{visibility:visible;animation:cinemaFade 1.85s linear both}.cinematic img{position:absolute;left:47vw;top:8vh;width:min(50vw,760px);height:min(50vw,760px);object-fit:contain;mix-blend-mode:multiply;clip-path:circle(43%);transform-origin:67% 42%;opacity:0}.cinematic.run img{animation:mapDive 1.55s var(--ease) both}.cinematic .focus{position:absolute;left:76.5vw;top:38vh;width:13px;height:13px;border-radius:50%;background:var(--red);box-shadow:0 0 0 0 rgba(197,31,43,.5);opacity:0}.cinematic.run .focus{animation:focusPulse .9s ease .18s both}.cinematic .jump{position:absolute;inset:0;display:grid;place-items:center;text-align:center;color:var(--white);opacity:0}.cinematic .jump b{display:block;font:700 clamp(90px,18vw,270px)/.75 "Hiragino Mincho ProN","Yu Mincho",serif}.cinematic .jump span{display:block;margin-top:4vh;font-size:13px;font-weight:700;letter-spacing:.36em;text-transform:uppercase}.cinematic.run .jump{animation:timeJump .72s var(--ease) .92s both}
+    @keyframes mapDive{0%{opacity:1;transform:translate(0,0) scale(1)}58%{opacity:1;transform:translate(-26vw,8vh) scale(4.6)}100%{opacity:0;transform:translate(-30vw,10vh) scale(6.2);filter:blur(8px)}}
+    @keyframes focusPulse{0%{opacity:0;box-shadow:0 0 0 0 rgba(197,31,43,.5)}35%{opacity:1;box-shadow:0 0 0 24px rgba(197,31,43,0)}100%{opacity:0;transform:scale(2)}}
+    @keyframes cinemaFade{0%,82%{background:var(--paper)}100%{background:var(--ink);visibility:hidden}}
+    @keyframes timeJump{0%{opacity:0;transform:scale(.72);background:transparent}35%,70%{opacity:1;transform:scale(1);background:var(--red)}100%{opacity:0;transform:scale(1.08);background:var(--red)}}
+    .chapter-cinematic{position:fixed;inset:0;z-index:59;display:grid;place-items:center;visibility:hidden;overflow:hidden;pointer-events:none}.chapter-cinematic::before{content:"";position:absolute;inset:0;transform:scaleX(0);transform-origin:left}.chapter-cinematic .chapter-message{position:relative;z-index:1;text-align:center;color:var(--white);opacity:0}.chapter-cinematic b{display:block;font:700 clamp(86px,17vw,250px)/.8 "Bodoni 72",Didot,serif;letter-spacing:-.07em}.chapter-cinematic span{display:block;margin-top:4vh;font-size:12px;font-weight:700;letter-spacing:.34em;text-transform:uppercase}.chapter-cinematic.run{visibility:visible}.chapter-cinematic.run::before{animation:chapterWipe 1.28s var(--ease) both}.chapter-cinematic.run .chapter-message{animation:chapterMessage 1.08s var(--ease) .16s both}.chapter-cinematic.ink::before,.chapter-cinematic.night::before{background:var(--ink)}.chapter-cinematic.redwipe::before,.chapter-cinematic.finalwipe::before{background:var(--red)}.chapter-cinematic.night b{letter-spacing:.02em}.chapter-cinematic.finalwipe b{font-size:clamp(70px,13vw,190px)}
+    @keyframes chapterWipe{0%{transform:scaleX(0);transform-origin:left}42%,65%{transform:scaleX(1);transform-origin:left}66%{transform-origin:right}100%{transform:scaleX(0);transform-origin:right}}
+    @keyframes chapterMessage{0%,12%{opacity:0;transform:translateY(35px)}35%,67%{opacity:1;transform:none}100%{opacity:0;transform:translateY(-28px)}}
     .presenter{position:fixed;z-index:19;left:2.5vw;bottom:7.2vh;color:#777;font-size:9px;letter-spacing:.16em;text-transform:uppercase;opacity:0;transition:opacity .3s}.deck:hover+.chrome .presenter{opacity:1}
     @media(max-width:900px){.slide{padding:7vh 6vw 12vh}.title{font-size:clamp(44px,10vw,76px)}.geo,.culture,.brazil,.morita,.salary-layout{grid-template-columns:1fr}.globe{position:absolute;right:-19vw;bottom:-14vh;opacity:.3}.timeline{grid-template-columns:1fr 1fr}.work-grid,.products{grid-template-columns:1fr 1fr}.process{grid-template-columns:1fr}.process-arrow{display:none}.compare{grid-template-columns:1fr 1fr}.half{padding:8vh 5vw}.morita .portrait{display:none}.thumbs{grid-template-columns:repeat(2,1fr)}}
     @media(max-width:600px){.timeline,.work-grid,.night-sequence,.products{grid-template-columns:1fr}.timeline .era:nth-child(n+3),.work-item:nth-child(n+3),.night-step:nth-child(n+3),.product:nth-child(n+3){display:none}.chrome{grid-template-columns:80px 1fr 55px}.chapter{display:none}.team{right:7vw;line-height:1.6}.compare-note{white-space:normal;width:82%;text-align:center}.overview{padding:3vh 4vw}.thumbs{grid-template-columns:1fr 1fr}}
@@ -164,6 +175,8 @@
   </section>
 </main>
 
+<div class="cinematic" aria-hidden="true"><img src="assets/globo-japao-3d.png" alt=""><i class="focus"></i><div class="jump"><div><b>日本</b><span>Da localização à formação histórica</span></div></div></div>
+<div class="chapter-cinematic" aria-hidden="true"><div class="chapter-message"><b></b><span></span></div></div>
 <div class="chrome"><div class="section-name">Abertura</div><nav class="progress" aria-label="Navegação da apresentação"></nav><div class="count">01 / 13</div></div>
 <button class="help" aria-label="Ajuda">?</button><aside class="help-panel"><b>Controles</b><p>← → ou Espaço · navegar<br>F · tela cheia<br>O · visão geral<br>Home / End · início / fim<br>Swipe · celular e trackpad</p></aside>
 <section class="overview" aria-hidden="true"><div class="overview-head"><h2>Visão geral</h2><button>Fechar · Esc</button></div><div class="thumbs"></div></section>
@@ -188,9 +201,26 @@
   }
   function show(next){
     next=Math.max(0,Math.min(slides.length-1,next));if(next===current||busy)return;
-    busy=true;const old=slides[current];old.classList.remove('active');old.classList.add('leaving');
-    current=next;slides[current].classList.add('active');sync();
-    setTimeout(()=>{old.classList.remove('leaving');busy=false},760);
+    if(current===1&&next===2){mapToHistory(next);return}
+    const chapterCuts={
+      '3-4':['ink','仕事','Da cultura para o trabalho'],
+      '6-7':['redwipe','SONY','Uma empresa japonesa para o mundo'],
+      '9-10':['night','18:00 → 00:00','Quando o expediente não encerra o dia'],
+      '11-12':['finalwipe','O LIMITE','Trabalho, liderança e vida']
+    };
+    const cut=chapterCuts[`${current}-${next}`];if(cut){chapterTransition(next,...cut);return}
+    busy=true;const old=slides[current];old.classList.add('exiting');
+    setTimeout(()=>{old.classList.remove('active','exiting');current=next;slides[current].classList.add('active');sync();setTimeout(()=>busy=false,820)},420);
+  }
+  function mapToHistory(next){
+    busy=true;const old=slides[current],cinema=document.querySelector('.cinematic');old.classList.add('zoom-source');cinema.classList.add('run');
+    setTimeout(()=>{old.classList.remove('active','zoom-source');current=next;slides[current].classList.add('active');sync()},1080);
+    setTimeout(()=>{cinema.classList.remove('run');busy=false},1880);
+  }
+  function chapterTransition(next,variant,word,label){
+    busy=true;const old=slides[current],veil=document.querySelector('.chapter-cinematic');veil.className=`chapter-cinematic ${variant}`;veil.querySelector('b').textContent=word;veil.querySelector('span').textContent=label;requestAnimationFrame(()=>veil.classList.add('run'));
+    setTimeout(()=>{old.classList.remove('active');current=next;slides[current].classList.add('active');sync()},590);
+    setTimeout(()=>{veil.classList.remove('run');busy=false},1320);
   }
   function openOverview(){overview.classList.add('open');overview.setAttribute('aria-hidden','false')}
   function closeOverview(){overview.classList.remove('open');overview.setAttribute('aria-hidden','true')}
