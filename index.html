@@ -11,7 +11,7 @@
     body{font-family:"Avenir Next","Hiragino Sans","Yu Gothic",Arial,sans-serif;-webkit-font-smoothing:antialiased}
     button{font:inherit}.deck{position:absolute;left:50%;top:50%;width:1600px;height:900px;transform-origin:center;isolation:isolate;background:var(--paper);overflow:hidden;container-type:size}
     .slide{position:absolute;inset:0;display:grid;align-content:center;padding:7.5cqh 7cqw 10cqh;background:var(--paper);overflow:hidden;visibility:hidden;pointer-events:none}
-    .slide.active{visibility:visible;pointer-events:auto;z-index:2}.slide.zoom-source .copy{animation:textSweep .52s var(--ease) both}
+    .slide.active{visibility:visible;pointer-events:auto;z-index:2}
     .slide.dark{background:var(--ink);color:var(--white)}.slide.red-slide{background:var(--red);color:var(--white)}
     .slide::before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.19;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.15'/%3E%3C/svg%3E");mix-blend-mode:multiply}
     .slide.dark::before,.slide.red-slide::before{mix-blend-mode:screen;opacity:.07}
@@ -23,14 +23,13 @@
     .sun{position:absolute;border-radius:50%;background:var(--red);transform:scale(.3);opacity:0}.active.on .sun{animation:sunBloom 1.2s var(--ease) .08s both}
     @keyframes revealUp{0%{opacity:0;transform:translateY(38px)}100%{opacity:1;transform:none}}
     @keyframes sunBloom{0%{opacity:0;transform:scale(.28)}100%{opacity:1;transform:scale(1)}}
-    @keyframes textSweep{to{opacity:0;transform:translateX(-70px)}}
     .stroke{height:3px;background:var(--red);width:0;transition:width .9s var(--ease) .35s}.active.on .stroke{width:100%}
     .slide-label{position:absolute;z-index:5;right:2.5cqw;top:7cqh;font:700 12px/1 "Avenir Next",sans-serif;letter-spacing:.18em;color:var(--ash)}.dark .slide-label,.red-slide .slide-label{color:#aaa49a}
 
     /* 01 */
     .cover{background:var(--ink);color:var(--white);align-content:end;padding-bottom:14cqh}.cover .sun{width:42cqw;height:42cqw;right:-10cqw;top:-13cqw}.cover .jp-mark{position:absolute;right:8cqw;top:13cqh;font:700 clamp(110px,18cqw,260px)/1 "Hiragino Mincho ProN","Yu Mincho",serif;color:#2b2926}.cover .title{font-size:clamp(66px,9.3cqw,142px);max-width:1040px}.cover .lead{margin:3.5cqh 0 0;max-width:760px;color:#c9c3b9}.team{position:absolute;left:7cqw;bottom:5cqh;font-size:12px;letter-spacing:.1em;color:#aaa49a}
     /* 02 */
-    .geo{grid-template-columns:.92fr 1.08fr;gap:3cqw;align-items:center}.geo .copy{z-index:1}.geo .title{font-size:clamp(52px,6.5cqw,98px)}.globe{height:75cqh;display:grid;place-items:center;position:relative}.globe::after{content:"35.6762° N\A139.6503° E";white-space:pre;position:absolute;right:1cqw;bottom:6cqh;font-size:11px;line-height:1.6;letter-spacing:.2em;color:var(--ash)}.globe img{width:min(47cqw,720px);height:min(47cqw,720px);object-fit:contain;filter:contrast(1.03);transform:scale(.94) rotate(-2deg);transition:transform 1.25s var(--ease) .08s}.active.on .globe img{transform:scale(1) rotate(0)}.slide.zoom-source .globe img{transform:scale(1.08) translateX(-.7cqw) rotate(0)}
+    .geo{display:block}.geo .copy{position:absolute;left:7cqw;top:50%;width:39cqw;z-index:2;opacity:0;transform:translateY(calc(-50% + 24px));transition:opacity .7s var(--ease) .22s,transform .8s var(--ease) .22s}.geo .title{font-size:clamp(52px,6.5cqw,98px)}.geo>.chapter,.geo>.slide-label{opacity:0;transition:opacity .5s ease .35s}.globe{position:absolute;left:50%;top:50%;width:min(47cqw,720px);height:min(47cqw,720px);transform:translate(-50%,-50%);transition:left 1s var(--ease);z-index:1}.globe img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;filter:contrast(1.03)}.globe-highlight{opacity:0;clip-path:ellipse(13% 19% at 62% 40%);transition:opacity .55s ease .28s}.geo.map-reveal .copy{opacity:1;transform:translateY(-50%)}.geo.map-reveal>.chapter,.geo.map-reveal>.slide-label{opacity:1}.geo.map-reveal .globe{left:73%}.geo.map-reveal .globe-highlight{opacity:1}
     /* 03 */
     .timeline{margin-top:7cqh;position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:2.3cqw}.timeline::before{content:"";position:absolute;left:0;right:0;top:17px;height:2px;background:var(--line);transform:scaleX(0);transform-origin:left;transition:transform 1.2s var(--ease) .25s}.active.on .timeline::before{transform:scaleX(1)}.era{padding-top:5.8cqh;position:relative}.era::before{content:"";position:absolute;top:8px;left:0;width:18px;height:18px;border-radius:50%;background:var(--paper);border:5px solid var(--red);transform:scale(0);transition:transform .45s var(--ease);transition-delay:calc(var(--i)*170ms + 480ms)}.active.on .era::before{transform:scale(1)}.era b{display:block;font-family:"Bodoni 72",Didot,serif;font-size:clamp(24px,2.2cqw,36px);line-height:1;margin-bottom:1.6cqh}.era p{font-size:clamp(15px,1.2cqw,19px);line-height:1.48;color:#514c45}.history-note{margin-top:6cqh;padding-left:20px;border-left:3px solid var(--red);font-size:16px;line-height:1.5;max-width:930px;color:#5d5851}
     /* 04 */
@@ -58,9 +57,6 @@
     .chrome{position:absolute;z-index:20;left:0;right:0;bottom:0;height:6.5cqh;min-height:48px;padding:0 2.5cqw;display:grid;grid-template-columns:140px 1fr 105px;align-items:center;gap:2cqw;color:var(--ink);mix-blend-mode:difference}.section-name,.count{color:white;font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase}.count{text-align:right}.progress{display:grid;grid-template-columns:repeat(13,1fr);gap:7px;align-items:center}.dot{height:2px;border:0;padding:0;background:#777;cursor:pointer;transition:height .25s,background .25s}.dot.on{height:5px;background:white}.dot:hover{height:5px}
     .help{position:absolute;z-index:25;right:2.2cqw;top:2.4cqh;border:1px solid rgba(128,128,128,.45);background:rgba(240,235,225,.7);color:#222;width:34px;height:34px;border-radius:50%;cursor:pointer;font-weight:700}.help-panel{position:absolute;z-index:30;right:2.2cqw;top:7cqh;width:260px;padding:18px;background:#111;color:#eee;box-shadow:0 18px 50px #0007;opacity:0;transform:translateY(-10px);pointer-events:none;transition:.25s}.help-panel.open{opacity:1;transform:none;pointer-events:auto}.help-panel b{font-size:12px;letter-spacing:.15em;text-transform:uppercase}.help-panel p{font-size:13px;line-height:1.7;margin:12px 0 0;color:#bbb}
     .overview{position:absolute;inset:0;z-index:50;background:#111;color:white;padding:5cqh 5cqw;overflow:auto;opacity:0;pointer-events:none;transition:opacity .3s}.overview.open{opacity:1;pointer-events:auto}.overview-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:4cqh}.overview-head h2{font:700 42px/1 "Bodoni 72",Didot,serif;margin:0}.overview-head button{border:1px solid #777;background:none;color:white;padding:9px 14px;cursor:pointer}.thumbs{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}.thumb{aspect-ratio:16/9;border:1px solid #454545;background:#1b1b1b;color:white;padding:18px;text-align:left;cursor:pointer;position:relative;overflow:hidden;transition:transform .25s,border-color .25s}.thumb:hover,.thumb.current{transform:translateY(-3px);border-color:var(--red)}.thumb b{display:block;color:#f29aa1;font-size:10px;letter-spacing:.16em;margin-bottom:12px}.thumb span{font:700 clamp(17px,1.6cqw,25px)/1.05 "Bodoni 72",Didot,serif}
-    .cinematic{position:absolute;left:0;top:0;bottom:0;width:48cqw;z-index:60;background:transparent;visibility:hidden;pointer-events:none}.cinematic.run{visibility:visible}.cinematic .map-window{display:none}.cinematic .jump{position:absolute;inset:0;display:grid;place-items:center;padding-left:7cqw;text-align:left;color:var(--ink);opacity:0}.cinematic .jump>div{width:100%}.cinematic .jump b{display:block;max-width:560px;font:700 clamp(58px,7.2cqw,108px)/.9 "Bodoni 72",Didot,serif;letter-spacing:-.055em}.cinematic .jump span{display:block;margin-top:3cqh;font-size:12px;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:var(--red)}.cinematic.run .jump{animation:textBridgeHold .72s var(--ease) .25s both}.cinematic.run.depart .jump{animation:textDepart .36s var(--ease) both}
-    @keyframes textBridgeHold{0%{opacity:0;transform:translateY(28px)}100%{opacity:1;transform:none}}
-    @keyframes textDepart{0%{opacity:1;transform:none}100%{opacity:0;transform:translateY(-18px)}}
     .curtain{position:absolute;inset:-2px;z-index:55;background:var(--red);transform:scaleX(0);transform-origin:left;pointer-events:none;visibility:hidden}.curtain.run{visibility:visible}.curtain.cover{animation:curtainIn .46s cubic-bezier(.76,0,.24,1) both}.curtain.reveal{animation:curtainOut .56s var(--ease) both}.curtain.ink{background:var(--ink)}
     @keyframes curtainIn{from{transform:scaleX(0);transform-origin:left}to{transform:scaleX(1);transform-origin:left}}
     @keyframes curtainOut{from{transform:scaleX(1);transform-origin:right}to{transform:scaleX(0);transform-origin:right}}
@@ -81,7 +77,7 @@
   <section class="slide geo" data-section="O país" data-title="Onde fica o Japão" data-tr="enso" data-origin="1280,210">
     <div class="chapter">O país · localização</div><div class="slide-label">02 — 13</div>
     <div class="copy"><p class="eyebrow" data-reveal style="--i:0">O país · localização</p><h2 class="display title" data-reveal style="--i:1">No extremo<br>leste da <span class="red">Ásia.</span></h2><p class="lead" data-reveal style="--i:2">Um arquipélago no oceano Pacífico, próximo à China, às Coreias e à Rússia.</p></div>
-    <div class="globe" data-reveal style="--i:2"><img src="assets/globo-japao-3d-v2.png" alt="Globo preto e branco com o Japão destacado em vermelho"></div>
+    <div class="globe"><img class="globe-neutral" src="assets/globo-japao-3d-neutral-v2.png" alt="Globo preto e branco voltado para o leste da Ásia"><img class="globe-highlight" src="assets/globo-japao-3d-v2.png" alt="" aria-hidden="true"></div>
   </section>
 
   <section class="slide" data-section="História" data-title="As eras que explicam o Japão atual" data-tr="shoji">
@@ -166,7 +162,6 @@
   <section class="slide closing" data-section="Conclusão" data-title="Trabalhar sem perder a vida para o trabalho" data-tr="enso" data-origin="1410,760">
     <div class="chapter">Conclusão</div><div class="slide-label">13 — 13</div><div class="sun"></div><p class="eyebrow" data-reveal style="--i:0">Conclusão</p><h2 class="display title" data-reveal style="--i:1">O desafio não é trabalhar menos por princípio.<br><span class="red">É trabalhar sem perder a vida para o trabalho.</span></h2><p class="lead" data-reveal style="--i:2">O Japão mostra como história, cultura e gestão podem gerar reconstrução, qualidade e inovação — mas também pressão e excesso.</p><div class="sources" data-reveal style="--i:3">Fontes principais: Sony Group — história e perfil corporativo; Akio Morita Library — cronologia; JETRO — relações de trabalho no Japão; Ministério da Saúde, Trabalho e Bem-Estar do Japão; documento entregue na atividade.</div>
   </section>
-<div class="cinematic" aria-hidden="true"><div class="jump"><div><b>Do mapa<br>às eras.</b><span>Como a história formou o Japão atual</span></div></div></div>
 <div class="curtain" aria-hidden="true"></div>
 <div class="fx-layer" aria-hidden="true"></div>
 <div class="chrome"><div class="section-name">Abertura</div><nav class="progress" aria-label="Navegação da apresentação"></nav><div class="count">01 / 13</div></div>
@@ -198,21 +193,20 @@
     if(current===1&&next===2&&!mapStage){activateMapStage();return}
     if(current===1&&next===2&&mapStage){advanceFromMapStage(next);return}
     if(current===1&&next===0&&mapStage){resetMapStage();return}
-    if(mapStage){document.querySelector('.cinematic').classList.remove('run','depart');slides[1].classList.remove('zoom-source');mapStage=false}
+    if(mapStage){slides[1].classList.remove('map-reveal');mapStage=false}
     if(next===current)return;
     transitionTo(next);
   }
   function activateMapStage(){
-    busy=true;const old=slides[1],cinema=document.querySelector('.cinematic');old.classList.add('zoom-source');cinema.classList.remove('depart');cinema.classList.add('run');mapStage=true;
-    setTimeout(()=>busy=false,1000);
+    busy=true;slides[1].classList.add('map-reveal');mapStage=true;
+    setTimeout(()=>busy=false,1050);
   }
   function advanceFromMapStage(next){
-    busy=true;const old=slides[1],cinema=document.querySelector('.cinematic');cinema.classList.add('depart');
-    setTimeout(()=>{cinema.classList.remove('run','depart');mapStage=false;transitionTo(next,true)},300);
+    busy=true;mapStage=false;transitionTo(next,true);
   }
   function resetMapStage(){
-    busy=true;const old=slides[1],cinema=document.querySelector('.cinematic');cinema.classList.add('depart');
-    setTimeout(()=>{cinema.classList.remove('run','depart');old.classList.remove('zoom-source');mapStage=false;busy=false},420);
+    busy=true;slides[1].classList.remove('map-reveal');mapStage=false;
+    setTimeout(()=>busy=false,850);
   }
   async function transitionTo(next,alreadyBusy=false){
     if(!alreadyBusy)busy=true;
@@ -222,7 +216,7 @@
       else if(kind==='shoji')await transitionShoji(next);
       else if(kind==='split')await transitionSplit(next);
       else await transitionSumi(next);
-    }finally{slides[1].classList.remove('zoom-source');fx.replaceChildren();curtain.className='curtain';busy=false}
+    }finally{slides[1].classList.remove('map-reveal');fx.replaceChildren();curtain.className='curtain';busy=false}
   }
   function swapScene(next){
     slides[current].classList.remove('active','on');current=next;slides[current].classList.add('active');sync();
@@ -284,6 +278,8 @@
   document.querySelector('.overview-head button').onclick=closeOverview;
   const requested=Number(new URLSearchParams(location.search).get('slide'));
   if(requested>1&&requested<=slides.length){slides[0].classList.remove('active');current=requested-1;slides[current].classList.add('active')}
+  if(current===1&&new URLSearchParams(location.search).get('stage')==='reveal'){slides[1].classList.add('map-reveal');mapStage=true}
+  if(current===1&&new URLSearchParams(location.search).get('stage')==='reveal'){slides[1].classList.add('map-reveal');mapStage=true}
   addEventListener('resize',fitStage);fitStage();sync();requestAnimationFrame(()=>slides[current].classList.add('on'));
 </script>
 </body>
