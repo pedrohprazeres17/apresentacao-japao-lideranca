@@ -38,11 +38,22 @@ Professora e turma da disciplina de Liderança. Exibição em projetor, com apre
 
 ## Blueprint
 
+- Palco fixo de `1600 × 900`, escalado como uma peça única para preservar a composição em qualquer tela.
 - Área útil 16:9, com margens generosas e composição assimétrica.
 - Cada tela tem uma ideia principal e no máximo um bloco secundário.
 - Alternância entre telas claras e escuras para marcar capítulos.
-- Transições por máscara horizontal e revelação escalonada dos elementos.
-- Animação entre 500 e 850 ms, sem looping chamativo.
+- Apenas uma cena permanece ativa; a transição cobre a cena anterior antes da troca e revela a seguinte depois.
+- Não existem avanços automáticos: cada etapa responde ao clique, teclado ou gesto do apresentador.
+
+## Sistema de movimento — revisão após auditoria da SPARK
+
+- A SPARK foi usada como referência técnica de estabilidade e direção de palco, não como tema visual.
+- O repertório inclui círculo **ensō**, painéis **shoji**, divisão horizontal e passagem de **sumi**.
+- Cada efeito corresponde a uma mudança de capítulo; não há telas intermediárias decorativas.
+- No slide 2, o primeiro comando aproxima o globo e mantém a composição parada. O segundo comando avança para a linha histórica.
+- O Japão é destacado somente pelo território vermelho presente no próprio globo; o marcador incorreto foi removido.
+- Nenhum texto de duas cenas diferentes pode permanecer visível no mesmo quadro.
+- Animações duram entre 460 e 1.100 ms, sem blur, looping ou movimento gratuito.
 
 ## Densidade
 
