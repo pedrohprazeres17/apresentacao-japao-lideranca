@@ -68,7 +68,7 @@ Cada mudança de tela tem uma transição própria, ligada ao tema da tela que e
 Dentro das telas:
 
 - Títulos entram palavra a palavra, saindo de uma máscara; em “SONY” cada letra cai.
-- Fotos e pinturas são reveladas por uma cortina, com zoom lento contínuo (*Ken Burns*).
+- Fotos e pinturas são reveladas por uma cortina e assentam com um leve zoom. Depois que tudo entra, nada fica se mexendo (movimentos contínuos causavam tremor na tela).
 - No slide 3, a linha do tempo se desenha e a foto de 1945 “revela” como papel fotográfico.
 - No slide 12, um relógio corre de 00:30 (último trem) até 05:00 (primeiro trem).
 - O cursor some depois de 2,5 s parado.
