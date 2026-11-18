@@ -15,6 +15,6 @@ Todas as fotos e pinturas vêm do **Wikimedia Commons**. As licenças abaixo per
 | `dormir-metro.jpg` | 12 | *Snooze* | Flickr (via Commons) | CC BY 2.0 |
 | `dormir-mangacafe.jpg` | 12 | *Manga Kissa 2* | Steve Nagata | CC BY 2.0 |
 
-Os globos do slide 2 (`assets/globo-japao-3d-*.png`) foram mantidos da versão anterior.
+Os globos do slide 2 (`assets/globo-japao-3d-*.webp`) foram mantidos da versão anterior.
 
 **Para trocar uma foto do slide 12:** basta salvar outra imagem com o mesmo nome em `assets/editorial/`. Por exemplo, uma foto de alguém dormindo na calçada pode substituir `dormir-vagao.jpg`; depois, ajuste a legenda no `index.html`.

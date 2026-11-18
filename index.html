@@ -56,15 +56,15 @@
     .cover .title{font-size:clamp(66px,9.3cqw,142px);max-width:1040px}
     .team{margin-top:4.5cqh;display:flex;align-items:center;gap:18px}.team .rule{width:64px;flex:none}.team p{margin:0;font-size:17px;letter-spacing:.06em;color:#e3ddd3}.team small{display:block;font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:#f2a4a9;margin-bottom:6px}
     /* 02 */
-    .geo{display:block}.geo .copy{position:absolute;left:7cqw;top:50%;width:39cqw;z-index:2;opacity:0;transform:translateY(calc(-50% + 24px));transition:opacity .7s var(--ease) .22s,transform .8s var(--ease) .22s}.geo .title{font-size:clamp(52px,6.5cqw,98px)}.geo>.chapter,.geo>.slide-label{opacity:0;transition:opacity .5s ease .35s}
-    .globe{position:absolute;left:50%;top:50%;width:min(47cqw,720px);height:min(47cqw,720px);transform:translate(-50%,-50%);transition:left 1s var(--ease);z-index:1}
+    .geo{display:block}.geo .copy{position:absolute;left:7cqw;top:50%;width:39cqw;z-index:2;transform:translateY(-50%)}.geo .copy>*{opacity:0;transform:translateY(28px);transition:opacity .7s var(--ease),transform .9s var(--expo);will-change:transform,opacity}.geo .copy>:nth-child(1){transition-delay:.35s}.geo .copy>:nth-child(2){transition-delay:.47s}.geo .copy>:nth-child(3){transition-delay:.62s}.geo.map-reveal .copy>*{opacity:1;transform:none}.geo .title{font-size:clamp(52px,6.5cqw,98px)}.geo>.chapter,.geo>.slide-label{opacity:0;transition:opacity .5s ease .35s}
+    .globe{position:absolute;left:50%;top:50%;width:720px;height:720px;margin:-360px 0 0 -360px;translate:0 0;scale:1;transition:translate 1.15s cubic-bezier(.65,0,.25,1),scale 1.15s cubic-bezier(.65,0,.25,1);z-index:1;will-change:transform,translate}
     .active.on .globe{animation:globeIn 1.3s var(--expo) both}
-    @keyframes globeIn{from{opacity:0;transform:translate(-50%,-50%) scale(.82) rotate(-8deg)}to{opacity:1;transform:translate(-50%,-50%)}}
-    .globe img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;filter:contrast(1.03)}.globe-highlight{opacity:0;clip-path:ellipse(13% 19% at 62% 40%);transition:opacity .55s ease .28s}
+    @keyframes globeIn{from{opacity:0;transform:scale(.86) rotate(-10deg)}to{opacity:1;transform:none}}
+    .globe img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain}.globe-highlight{opacity:0;clip-path:ellipse(13% 19% at 62% 40%);transition:opacity .6s ease .45s;will-change:opacity}
     .globe-pulse{position:absolute;left:62%;top:40%;width:22%;aspect-ratio:1;margin:-11% 0 0 -11%;border:2px solid var(--red);border-radius:50%;opacity:0;pointer-events:none}
     .geo.map-reveal .globe-pulse{animation:pulse 2.4s var(--ease) .7s infinite}
     @keyframes pulse{0%{opacity:.9;transform:scale(.4)}80%,100%{opacity:0;transform:scale(1.5)}}
-    .geo.map-reveal .copy{opacity:1;transform:translateY(-50%)}.geo.map-reveal>.chapter,.geo.map-reveal>.slide-label{opacity:1}.geo.map-reveal .globe{left:73%}.geo.map-reveal .globe-highlight{opacity:1}
+    .geo.map-reveal>.chapter,.geo.map-reveal>.slide-label{opacity:1}.geo.map-reveal .globe{translate:368px 0;scale:1.06}.geo.map-reveal .globe-highlight{opacity:1}
     /* 03 */
     .timeline{margin-top:4.2cqh;display:grid;grid-template-columns:repeat(4,1fr);gap:1.6cqw;position:relative}
     .era{min-width:0;position:relative}
@@ -189,7 +189,7 @@
   <section class="slide geo" data-section="O país" data-title="Onde fica o Japão" data-tr="hinomaru">
     <div class="chapter">O país · localização</div><div class="slide-label">02 — 13</div>
     <div class="copy"><p class="eyebrow">O país · localização</p><h2 class="display title">No extremo<br>leste da <span class="red">Ásia.</span></h2><p class="lead">Um arquipélago no oceano Pacífico, próximo à China, às Coreias e à Rússia.</p></div>
-    <div class="globe"><img class="globe-neutral" src="assets/globo-japao-3d-neutral-v2.png" alt="Globo preto e branco voltado para o leste da Ásia"><img class="globe-highlight" src="assets/globo-japao-3d-v2.png" alt="" aria-hidden="true"><span class="globe-pulse" aria-hidden="true"></span></div>
+    <div class="globe"><img class="globe-neutral" src="assets/globo-japao-3d-neutral-v2.webp" alt="Globo preto e branco voltado para o leste da Ásia"><img class="globe-highlight" src="assets/globo-japao-3d-v2.webp" alt="" aria-hidden="true"><span class="globe-pulse" aria-hidden="true"></span></div>
   </section>
 
   <section class="slide" data-section="História" data-title="As eras que explicam o Japão atual" data-tr="brush">
@@ -304,7 +304,7 @@
   </section>
 <div class="fx-layer" aria-hidden="true"></div>
 <div class="chrome"><div class="section-name">Abertura</div><nav class="progress" aria-label="Navegação da apresentação"></nav><div class="count">01 / 13</div></div>
-<button class="help" aria-label="Ajuda">?</button><aside class="help-panel"><b>Controles</b><p>Clique, → ou Espaço · avançar<br>← · voltar<br>F · tela cheia<br>O · visão geral<br>Home / End · início / fim<br>Swipe · celular e trackpad</p><p style="margin-top:10px;font-size:11px;color:#777">Versão 3 · bola da capa parada</p></aside>
+<button class="help" aria-label="Ajuda">?</button><aside class="help-panel"><b>Controles</b><p>Clique, → ou Espaço · avançar<br>← · voltar<br>F · tela cheia<br>O · visão geral<br>Home / End · início / fim<br>Swipe · celular e trackpad</p><p style="margin-top:10px;font-size:11px;color:#777">Versão 4 · slide 2 mais fluido</p></aside>
 <section class="overview" aria-hidden="true"><div class="overview-head"><h2>Visão geral</h2><button>Fechar · Esc</button></div><div class="thumbs"></div></section>
 </main>
 
@@ -376,7 +376,7 @@
 
   let pushAnim=null;
   function push(el,{scale=.94,y=0,rot=0,dur=700}={}){
-    pushAnim=el.animate([{transform:'none',filter:'brightness(1)'},{transform:`translateY(${y}px) scale(${scale}) rotate(${rot}deg)`,filter:'brightness(.72)'}],{duration:dur,easing:'cubic-bezier(.6,0,.4,1)',fill:'forwards'});
+    pushAnim=el.animate([{transform:'none'},{transform:`translateY(${y}px) scale(${scale}) rotate(${rot}deg)`}],{duration:dur,easing:'cubic-bezier(.6,0,.4,1)',fill:'forwards'});
     return pushAnim;
   }
   function swap(next,{hold=false,cls=''}={}){
@@ -427,25 +427,31 @@
       const x=1424,y=128,d=el('disc',`left:${x}px;top:${y}px;background:#c51f2b`);
       push(slides[current],{scale:1.04,dur:700});
       await play(d,[{transform:'scale(.56)'},{transform:`scale(${coverScale(x,y)})`}],{duration:700,easing:'cubic-bezier(.7,0,.25,1)'});
-      swap(next);d.remove();
-      await irisOpen('#c51f2b',800,450,820);
+      swap(next);
+      /* o vermelho encolhe e “cai” sobre o Japão no globo (886,378) */
+      const s0=coverScale(x,y),jx=886,jy=378;
+      await play(d,[{transform:`translate(${800-x}px,${450-y}px) scale(${coverScale(800,450)})`,offset:0},{transform:`translate(${jx-x}px,${jy-y}px) scale(0)`}],{duration:900,easing:'cubic-bezier(.7,0,.2,1)'});
     },
 
     /* 2 → 3 · três pinceladas de sumi cobrem e depois são “apagadas” */
     async brush(next){
-      const ns='http://www.w3.org/2000/svg',svg=document.createElementNS(ns,'svg');svg.setAttribute('viewBox','0 0 1600 900');svg.setAttribute('class','ink-svg');svg.setAttribute('preserveAspectRatio','none');fx.append(svg);
-      const rows=[[150,330,'M-200 170 C 300 120, 900 210, 1800 140'],[450,340,'M1800 460 C 1200 420, 500 520, -200 440'],[760,350,'M-200 760 C 400 800, 1000 700, 1800 770']];
-      const strokes=[];
-      rows.forEach(([,w,d],i)=>{
-        [[w,1,0],[w*.18,.55,-w*.46],[w*.12,.7,w*.44]].forEach(([sw,op,off],k)=>{
-          const p=document.createElementNS(ns,'path');p.setAttribute('d',d);p.setAttribute('fill','none');p.setAttribute('stroke','#11110f');p.setAttribute('stroke-width',sw);p.setAttribute('stroke-linecap','round');p.setAttribute('opacity',op);
-          if(off)p.setAttribute('transform',`translate(0 ${off})`);svg.append(p);const L=p.getTotalLength();p.style.strokeDasharray=L;p.style.strokeDashoffset=L;strokes.push({p,L,i,k});
-        });
+      const ns='http://www.w3.org/2000/svg';
+      const rows=[[-40,380,'M-200 210 C 300 150, 900 260, 1800 180',0],[250,400,'M-200 230 C 500 300, 1100 160, 1800 230',1],[540,400,'M-200 190 C 400 250, 1000 140, 1800 220',0]];
+      const bands=rows.map(([top,w,d,flip],i)=>{
+        const F=160,outer=el('fx-band',`left:${-F}px;top:0;width:${W+2*F}px;height:${H}px;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 ${F}px,#000 calc(100% - ${F}px),transparent);mask-image:linear-gradient(90deg,transparent,#000 ${F}px,#000 calc(100% - ${F}px),transparent)`);
+        const inner=document.createElement('div');inner.style.cssText='position:absolute;inset:0;will-change:transform';outer.append(inner);
+        const svg=document.createElementNS(ns,'svg');svg.setAttribute('viewBox','0 0 1600 420');svg.setAttribute('width','1600');svg.setAttribute('height','420');svg.style.cssText=`position:absolute;left:${F}px;top:${top}px;overflow:visible`;
+        if(flip)svg.style.transform='scaleX(-1)';svg.style.transformOrigin='800px 210px';
+        [[w,1,0],[w*.16,.5,-w*.47],[w*.1,.65,w*.45],[w*.06,.4,w*.3]].forEach(([sw,op,off])=>{const p=document.createElementNS(ns,'path');p.setAttribute('d',d);p.setAttribute('fill','none');p.setAttribute('stroke','#11110f');p.setAttribute('stroke-width',sw);p.setAttribute('stroke-linecap','round');p.setAttribute('opacity',op);if(off)p.setAttribute('transform',`translate(0 ${off})`);svg.append(p)});
+        inner.append(svg);outer.style.willChange='transform';return {outer,inner,dir:flip?-1:1,i};
       });
       push(slides[current],{scale:.97,dur:700});
-      await Promise.all(strokes.map(({p,L,i,k})=>play(p,[{strokeDashoffset:L},{strokeDashoffset:0}],{duration:430,delay:i*120+k*35,easing:'cubic-bezier(.55,0,.25,1)'})));
+      const wipe=(from,to,dur,delayK)=>Promise.all(bands.map(({outer,inner,dir,i})=>Promise.all([
+        play(outer,[{transform:`translateX(${from*dir}%)`},{transform:`translateX(${to*dir}%)`}],{duration:dur,delay:i*delayK,easing:'cubic-bezier(.55,0,.25,1)'}),
+        play(inner,[{transform:`translateX(${-from*dir}%)`},{transform:`translateX(${-to*dir}%)`}],{duration:dur,delay:i*delayK,easing:'cubic-bezier(.55,0,.25,1)'})])));
+      await wipe(-100,0,480,110);
       swap(next);
-      await Promise.all(strokes.map(({p,L,i,k})=>play(p,[{strokeDashoffset:0},{strokeDashoffset:-L}],{duration:520,delay:i*90+k*25,easing:'cubic-bezier(.6,0,.2,1)'})));
+      await wipe(0,100,540,90);
     },
 
     /* 3 → 4 · portas shoji se fecham e se abrem */
