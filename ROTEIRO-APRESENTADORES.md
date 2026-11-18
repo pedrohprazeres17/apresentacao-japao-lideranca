@@ -50,15 +50,17 @@ Transição: “Parte dessa expansão mundial se explica pela liderança de um d
 
 ### Slide 10 — Akio Morita
 
-Apresentar Morita como cofundador e líder visionário. Formado em Física, ele ajudou a criar a empresa com Masaru Ibuka, defendeu uma marca fácil de pronunciar no mundo e acreditou no Walkman mesmo com resistência interna. Em 1970, a Sony tornou-se a primeira empresa japonesa com ações negociadas na Bolsa de Nova York. Seu legado foi ajudar a transformar o “Made in Japan” em símbolo de inovação e qualidade.
+Apresentar Morita como cofundador e líder visionário. Ler a citação do livro *Made in Japan* (1986): ele queria liderar o público com novos produtos, e não apenas perguntar o que as pessoas queriam. Destacar os três pontos de liderança: visão global (nome Sony fácil de pronunciar no mundo; em 1970, primeira empresa japonesa na Bolsa de Nova York), coragem (bancou o Walkman mesmo com resistência interna) e criação de mercados. Fechar com o contraste do quadro: ele **conversa** com o padrão japonês na qualidade, no longo prazo e na ideia da empresa como comunidade, mas **rompe** com ele ao decidir contra o consenso e ao se expor pessoalmente no exterior — chegou a morar nos EUA para abrir o mercado.
 
-### Slide 11 — Elemento surpresa
+### Slide 11 — O expediente acabou. A obrigação social, não.
 
-Apresentar como uma pequena sequência, sem pedir que a turma adivinhe: o expediente formal termina, mas alguns profissionais continuam em confraternizações chamadas *nomikai*. Se perderem o último trem, podem esperar o transporte voltar em karaokês, hotéis-cápsula, bares ou, em alguns casos, espaços públicos. Ressaltar que não é a rotina de todos os japoneses; o exemplo mostra como a obrigação profissional pode avançar sobre a vida pessoal.
+Explicar que o expediente formal termina, mas muitos profissionais continuam em confraternizações com colegas e chefes chamadas *nomikai*. Elas fortalecem vínculos, porém também carregam pressão social para participar. Não revelar ainda o que acontece depois — esse é o gancho para o próximo slide.
 
-### Slide 12 — A resposta
+Transição: “E quando a noite se estende demais… o que acontece se o último trem já passou?”
 
-Apresentar o *salaryman* como a figura associada a esse ciclo de dedicação e lealdade à empresa. Conectar jornadas longas, *nomikai* e perda do último trem. Encerrar o exemplo com o contraste entre união profissional, exaustão e *karoshi*.
+### Slide 12 — Fun fact: perdeu o último trem? A cidade vira quarto.
+
+O último trem sai por volta da meia-noite e meia; o primeiro só volta por volta das 5h. Táxi é caro, então quem fica para trás espera dormindo onde der: na calçada, em bancos de estação, em bares, karaokês ou manga cafés — e de lá segue direto para o trabalho, às vezes com a mesma roupa. Mostrar as fotos (registros reais). Ressaltar que não é a rotina de todos, mas é uma cena comum nas grandes cidades e mostra como a obrigação profissional pode atravessar a vida pessoal.
 
 ### Slide 13 — Fechamento
 
